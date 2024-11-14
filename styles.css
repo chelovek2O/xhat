@@ -1,0 +1,65 @@
+body {
+    background-color: #1e1e1e; 
+    color: #f2f2f2; 
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1, h2, h3, h4, h5 {
+    color: #f39c12; 
+}
+#nicknameContainer {
+    margin-bottom: 20px;
+}
+
+#nickname {
+    padding: 10px;
+    border: 2px solid #f39c12; 
+    border-radius: 5px;
+    width: 200px;
+    background-color: #333; 
+    color: #f2f2f2; 
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f39c12; 
+    color: #1e1e1e; 
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
+    padding-top: 5px
+}
+
+button:hover {
+    background-color: #dba24e; 
+}
+
+#chat {
+    border: 1px solid #444; 
+    background-color: #333; 
+    height: 300px;
+    overflow: auto;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#chat div {
+    margin: 5px 0;
+}
+
+strong {
+    color: var(--random_color) ; 
+}
+input{
+    
+    padding: 10px;
+    border: 2px solid #f39c12; 
+    border-radius: 5px;
+    width: 200px;
+    background-color: #333; 
+    color: #f2f2f2; 
+}

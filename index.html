@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>чатикс</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        
+
+
+        const socket = io();
+        let nickname = '';
+
+        function setNickname() {
+            const inputNickname = document.getElementById('nickname').value;
+            socket.emit('setNickname', inputNickname);
+        }
+
+        function sendMessage() {
+            const msg = document.getElementById('message').value;
+            socket.emit('message', msg);
+            document.getElementById('message').value = '';
+        }
+
+        socket.on('nicknameError', function(error) {
+            alert(error); 
+        });
+
+        socket.on('nicknameSuccess', function(successMessage) {
+            nickname = document.getElementById('nickname').value;
+            alert(successMessage);
+            document.getElementById('nicknameContainer').style.display = 'none';
+        });
+
+        socket.on('message', function({ nickname, msg }) {
+            const chat = document.getElementById('chat');
+            chat.innerHTML += `<div><strong>${nickname}:</strong> ${msg}</div>`;
+        });
+    </script>
+</head>
+<body>
+    <div id="nicknameContainer">
+        <input id="nickname" type="text" placeholder="введите никнейм" required>
+        <button onclick="setNickname()">установить никнейм</button>
+    </div>
+    <div id="chat" style="border: 1px solid #ccc; height: 300px; overflow: auto;"></div>
+    <input id="message" type="text" placeholder="ввод" required>
+    <button onclick="sendMessage()">➡</button>
+</body>
+</html>
