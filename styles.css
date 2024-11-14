@@ -51,9 +51,8 @@ button:hover {
     margin: 5px 0;
 }
 
-strong {
-    color: var(--random_color) ; 
-}
+
+
 input{
     
     padding: 10px;

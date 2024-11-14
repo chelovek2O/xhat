@@ -6,7 +6,8 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="/socket.io/socket.io.js"></script>
     <script>
-        
+        const colors = ['black', 'magenta', 'blue']
+        let colorIx = 0
 
 
         const socket = io();
@@ -35,7 +36,7 @@
 
         socket.on('message', function({ nickname, msg }) {
             const chat = document.getElementById('chat');
-            chat.innerHTML += `<div><strong>${nickname}:</strong> ${msg}</div>`;
+            chat.innerHTML += `<div style="color: ${colors[++colorIx % 3]}"><strong>${nickname}:</strong> ${msg}</div>`;
         });
     </script>
 </head>

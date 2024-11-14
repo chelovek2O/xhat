@@ -20,7 +20,7 @@ io.on('connection', (socket) => {
             socket.emit('nicknameError', 'Этот никнейм уже занят, выберите другой.');
         } else {
             activeNicknames.add(nickname);
-            socket.nickname = nickname; // Сохраняем никнейм для текущего сокета
+            socket.nickname = nickname; 
 
             socket.emit('nicknameSuccess', `Ваш никнейм установлен: ${nickname}`);
         
@@ -32,6 +32,7 @@ io.on('connection', (socket) => {
         if (socket.nickname) {
             console.log('Message: ' + msg);
             io.emit('message', { nickname: socket.nickname, msg }); // Отправка сообщения всем подключенным клиентам
+            
         }
     });
 
