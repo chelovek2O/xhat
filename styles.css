@@ -12,7 +12,10 @@ h1, h2, h3, h4, h5 {
 #nicknameContainer {
     margin-bottom: 20px;
 }
-
+#chat{
+    margin: 1%;
+    margin-bottom: 2%
+}
 #nickname {
     padding: 10px;
     border: 2px solid #f39c12; 

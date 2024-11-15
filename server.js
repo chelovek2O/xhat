@@ -8,8 +8,10 @@ const io = socketIo(server);
 
 let activeNicknames = new Set(); // Хранение активных никнеймов
 
+
+app.use(express.static(__dirname))
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
+    res.sendFile(__dirname + 'index.html');
 });
 
 io.on('connection', (socket) => {
